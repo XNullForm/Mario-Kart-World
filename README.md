@@ -39,9 +39,9 @@ An original 3D arcade kart racer inspired by open-world kart racing games. Built
 4. Use production branch **main**, framework **None**.
 5. Leave the **Build command** blank.
 6. Set the **Build output directory** to **public**.
-7. Deploy. Cloudflare will give you a public \`*.pages.dev\` link. Future pushes to \`main\` redeploy automatically.
+7. Deploy. Cloudflare will give you a public `*.pages.dev` link. Future pushes to `main` redeploy automatically.
 
-The repository root is NOT the deployment directory — it is specifically the \`public\` folder containing \`index.html\`.
+The repository root is NOT the deployment directory — it is specifically the `public` folder containing `index.html`.
 
 If you already have a Cloudflare Pages project, update its Git source/build configuration instead of creating a duplicate.
 
@@ -49,18 +49,18 @@ If you already have a Cloudflare Pages project, update its Git source/build conf
 
 Run a local HTTP server from the repository root:
 
-\`\`\`bash
+```bash
 python -m http.server 8000 --directory public
-\`\`\`
+```
 
-Then open http://localhost:8000 . Because the game uses browser ES modules, opening \`index.html\` with \`file://\` will not work reliably. An internet connection is required to fetch Three.js from jsDelivr.
+Then open http://localhost:8000 . Because the game uses browser ES modules, opening `index.html` with `file://` will not work reliably. An internet connection is required to fetch Three.js from jsDelivr.
 
 ## Repository layout
 
-- \`public/index.html\` — pages, menus, HUD and on-screen controls.
-- \`public/style.css\` — responsive visual design, glass panels and overlays.
-- \`public/world.js\` — island, road mesh, props, shader materials, pickups and boost pads.
-- \`public/game.js\` — renderer, karts, AI, driving physics, game modes, HUD, audio and cameras.
+- `public/index.html` — pages, menus, HUD and on-screen controls.
+- `public/style.css` — responsive visual design, glass panels and overlays.
+- `public/world.js` — island, road mesh, props, shader materials, pickups and boost pads.
+- `public/game.js` — renderer, karts, AI, driving physics, game modes, HUD, audio and cameras.
 
 ## Notes
 
