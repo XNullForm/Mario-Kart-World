@@ -107,11 +107,11 @@ export function createWorld(scene){
   const trackLength=curve.getLength();
   const samples=Array.from({length:840},(_,i)=>{const t=i/840,p=curve.getPointAt(t),dir=curve.getTangentAt(t);return {t,p,dir,n:new THREE.Vector3(dir.z,0,-dir.x)};});
   const skyMesh=sky(),water=ocean();scene.add(skyMesh,water);
-  scene.add(mesh(new THREE.CylinderGeometry(359,388,9,72),mat(0xe3cb97),0,-4.3,0,false));
-  scene.add(mesh(new THREE.CylinderGeometry(344,348,3,72),mat(0x7ac992),0,-1.4,0,false));
-  scene.add(mesh(new THREE.CylinderGeometry(307,330,1.3,72),mat(0x6bb882),0,-.2,0,false));
+  scene.add(mesh(new THREE.CylinderGeometry(359,388,9,72),mat(0xe3cb97),0,-6.4,0,false));
+  scene.add(mesh(new THREE.CylinderGeometry(344,348,3,72),mat(0x7ac992),0,-2.1,0,false));
+  scene.add(mesh(new THREE.CylinderGeometry(307,330,1.3,72),mat(0x6bb882),0,-.75,0,false));
   for(const [x,z,r,color] of [[254,78,107,0xe5c58b],[23,72,97,0x71b3a5],[-125,-66,105,0x548f6a]]){
-    const m=mesh(new THREE.CircleGeometry(r,60),mat(color),x,-.17,z,false);m.rotation.x=-Math.PI/2;scene.add(m);
+    const m=mesh(new THREE.CircleGeometry(r,60),mat(color),x,-.04,z,false);m.rotation.x=-Math.PI/2;scene.add(m);
   }
   const asphalt=mat(0x48535d,.94);asphalt.map=asphaltTexture();
   scene.add(ribbon(curve,30,.24,mat(0xecd9ad,.96)));
