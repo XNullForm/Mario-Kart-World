@@ -81,7 +81,7 @@ function buildKart(color,i=0){
   const wheels=[];
   const tireGeo=new THREE.CylinderGeometry(.63,.63,.48,16),rimGeo=new THREE.CylinderGeometry(.33,.33,.51,16);
   for(const x of [-1.28,1.28])for(const z of [-1.35,1.28]){
-    const wg=new THREE.Group();wg.position.set(x,.5,z);suspension.add(wg);
+    const wg=new THREE.Group();wg.position.set(x,.63,z);suspension.add(wg);
     const tire=part(wg,tireGeo,black);tire.rotation.z=Math.PI/2;
     const rim=part(wg,rimGeo,alloy,x>0?.03:-.03,0,0);rim.rotation.z=Math.PI/2;
     wheels.push(wg);
@@ -279,10 +279,10 @@ function updatePlayer(dt){
   }
   const road=nearestRoad(world,playerKart.root.position);
   state.offRoad=road.dist>ROAD_WIDTH*.53;
-  const roadMultiplier=state.offRoad?.62:1;
+  const roadMultiplier=state.offRoad ? .62 : 1;
   const extra=(state.padBoost>0?32:0)+(push?22:0);
   let top=spec.top*roadMultiplier+extra;
-  if(throttle)state.speed+=spec.accel*dt*(state.speed<top?.95:.4);
+  if(throttle)state.speed+=spec.accel*dt*(state.speed<top ? .95 : .4);
   else state.speed-=22*dt;
   if(brake)state.speed-=66*dt;
   if(push){state.boost=Math.max(0,state.boost-36*dt);state.shake=Math.min(.3,state.shake+dt*.4);}
